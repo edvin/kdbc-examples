@@ -19,7 +19,7 @@ using the default container setup. These samples were tested with [Wildfly 10](h
 * GET [api/customers](http://localhost:8080/javaee-example-1.0.0/api/customers) lists all customers 
 * GET [api/customers/1](http://localhost:8080/javaee-example-1.0.0/api/customers/1) lists customer 1
 * GET [api/customers/search/ill](http://localhost:8080/javaee-example-1.0.0/api/customers/search/ill) will find Customer 'Jill'
-* GET [api/customers/1/updateName/Johnnie](http://localhost:8080/javaee-example-1.0.0/api/customers/1/updateName/Johnnie) will give Customer 'John' a new name
+* PUT [api/customers/1](http://localhost:8080/javaee-example-1.0.0/api/customers/1/updateName/Johnnie) would update 'John' if you supply `{id: 1, name: 'Some Name'}`
 
 ## Note on pre-release
 
