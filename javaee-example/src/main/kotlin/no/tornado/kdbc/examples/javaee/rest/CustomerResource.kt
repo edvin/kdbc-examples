@@ -1,14 +1,12 @@
 package no.tornado.kdbc.examples.javaee.rest
 
+import no.tornado.kdbc.examples.javaee.models.Customer
 import no.tornado.kdbc.examples.javaee.services.CustomerService
 import javax.inject.Inject
 import javax.json.Json
 import javax.json.JsonArray
 import javax.json.JsonObject
-import javax.ws.rs.GET
-import javax.ws.rs.Path
-import javax.ws.rs.PathParam
-import javax.ws.rs.Produces
+import javax.ws.rs.*
 import javax.ws.rs.core.MediaType.APPLICATION_JSON
 
 @Path("customers")
@@ -43,13 +41,12 @@ open class CustomerResource {
         return json.build()
     }
 
-    @GET
-    @Path("{id}/updateName/{name}")
-    open fun updateName(@PathParam("id") id: Int, @PathParam("name") name: String): JsonObject {
-        val customer = customerService.byId(id)
-        customer.name = name
+    @PUT
+    @Path("{id}")
+    open fun updateName(json: JsonObject): JsonObject {
+        val customer = Customer(json)
         customerService.update(customer)
-        return customer.toJSON()
+        return getCustomer(customer.id)
     }
 
 }

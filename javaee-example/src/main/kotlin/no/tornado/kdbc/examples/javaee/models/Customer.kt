@@ -5,6 +5,7 @@ import kdbc.Table
 import kdbc.Update
 import java.sql.ResultSet
 import javax.json.Json
+import javax.json.JsonObject
 
 /**
  * The customer class has some fields and two constructors.
@@ -17,16 +18,18 @@ import javax.json.Json
  * The populated CustomerTable is returned from the
  * SelectCustomer query.
  *
- * The toJSON() function is used to convert the data into
- * JSON format for easier consumption in the REST Customer resource.
+ * The toJSON() function and the JsonObject constructor is used to marshal
+ * JSON data for easier consumption in the REST Customer resource.
  */
 class Customer(var id: Int, var name: String) {
     constructor(t: CustomerTable) : this(t.id(), t.name())
+    constructor(json: JsonObject) : this(json.getInt("id"), json.getString("name"))
 
     fun toJSON() = Json.createObjectBuilder()
             .add("id", id)
             .add("name", name)
             .build()
+
 }
 
 /**

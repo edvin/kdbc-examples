@@ -5,14 +5,11 @@ group 'no.tornado.kdbc'
 version '1.0.0'
 description 'KDBC JavaEE Integration Example'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+ext.javaee_version = '7.0'
+ext.kdbc_version = '1.0-SNAPSHOT'
+ext.kotlin_version = '1.0.3'
 
 buildscript {
-    ext.javaee_version = '7.0'
-    ext.kdbc_version = '1.0-SNAPSHOT'
-    ext.kotlin_version = '1.0.3'
-
     repositories {
         mavenCentral()
     }
@@ -20,7 +17,6 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
-
 
 repositories {
     mavenLocal()
