@@ -1,0 +1,3 @@
+rootProject.name = 'kdbc-examples'
+include 'javaee-example'
+

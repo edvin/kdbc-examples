@@ -1,0 +1,34 @@
+apply plugin: 'war'
+apply plugin: 'kotlin'
+
+group 'no.tornado.kdbc'
+version '1.0.0'
+description 'KDBC JavaEE Integration Example'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+buildscript {
+    ext.javaee_version = '7.0'
+    ext.kdbc_version = '1.0-SNAPSHOT'
+    ext.kotlin_version = '1.0.3'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "no.tornado:kdbc:$kdbc_version"
+    providedCompile "javax:javaee-api:$javaee_version"
+}
