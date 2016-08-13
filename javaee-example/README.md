@@ -1,6 +1,6 @@
 # Java EE Example usage for KDBC
 
-This demo showcases how to create basic queries and how to integrate KDBC with a JavaEE Container.
+This demo showcases how to create basic queries and how to integrate [KDBC](https://github.com/edvin/kdbc) with a JavaEE Container.
 
 It uses the default DataSource provided by the container. The [CreateExampleData](src/main/kotlin/no/tornado/kdbc/examples/javaee/CreateExampleData.kt)
 class will create some tables and put some sample data into it when the container starts.
