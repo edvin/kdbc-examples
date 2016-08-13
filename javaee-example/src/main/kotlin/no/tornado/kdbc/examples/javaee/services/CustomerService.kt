@@ -12,9 +12,9 @@ import javax.sql.DataSource
 open class CustomerService {
     @Resource lateinit private var ds: DataSource
 
-    // Convenience function to instantiate the SelectCustomer query and assign a database connection to it
+    // Convenience function to instantiate the SelectCustomer query and assign a database connection to it.
     // This could probably be improved in a declarative way, suggestions are welcome.
-    // This is very explicit and easy to reason about so it feels like "The Kotlin Way(TM)"
+    // Granted, it is very explicit and easy to reason about so it feels like "The Kotlin Way(TM)"
     private fun select() = SelectCustomer().db(ds)
 
     open fun list() = select().list()
