@@ -23,4 +23,4 @@ using the default container setup. These samples were tested with [Wildfly 10](h
 
 ## Note on pre-release
 
-Since KDBC is not released yet, you need to check it out and do `./gradlew install` locally before trying this out.
+Since KDBC is not released yet, you need to [check it out](https://github.com/edvin/kdbc) and do `./gradlew install` locally before trying this out.
