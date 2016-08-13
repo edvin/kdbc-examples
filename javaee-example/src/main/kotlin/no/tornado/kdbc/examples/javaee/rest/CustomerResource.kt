@@ -43,7 +43,7 @@ open class CustomerResource {
 
     @PUT
     @Path("{id}")
-    open fun updateName(json: JsonObject): JsonObject {
+    open fun updateCustomer(json: JsonObject): JsonObject {
         val customer = Customer(json)
         customerService.update(customer)
         return getCustomer(customer.id)
