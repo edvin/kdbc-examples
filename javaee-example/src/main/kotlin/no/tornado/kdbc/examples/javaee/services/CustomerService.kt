@@ -1,9 +1,9 @@
 package no.tornado.kdbc.examples.javaee.services
 
 import kdbc.db
-import no.tornado.kdbc.examples.javaee.mappers.SelectCustomer
-import no.tornado.kdbc.examples.javaee.mappers.UpdateCustomer
 import no.tornado.kdbc.examples.javaee.models.Customer
+import no.tornado.kdbc.examples.javaee.models.SelectCustomer
+import no.tornado.kdbc.examples.javaee.models.UpdateCustomer
 import javax.annotation.Resource
 import javax.ejb.Stateless
 import javax.sql.DataSource
