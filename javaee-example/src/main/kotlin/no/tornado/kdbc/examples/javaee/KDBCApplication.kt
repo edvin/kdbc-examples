@@ -26,7 +26,7 @@ open class KDBCApplication {
 
     @PostConstruct
     open fun init() {
-        KDBC.DataSourceProvider = { dataSource }
+        KDBC.setConnectionFactory { dataSource.connection }
 
         with(dataSource) {
             execute("DROP TABLE IF EXISTS customer")

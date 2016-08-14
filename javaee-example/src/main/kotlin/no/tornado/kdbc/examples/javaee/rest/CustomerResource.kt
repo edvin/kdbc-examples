@@ -46,7 +46,7 @@ open class CustomerResource {
     open fun updateCustomer(@PathParam("id") id: Int, json: JsonObject): JsonObject {
         val customer = Customer(json)
         if (id == customer.id) customerService.update(customer)
-        return getCustomer(customer.id)
+        return getCustomer(id)
     }
 
 }
