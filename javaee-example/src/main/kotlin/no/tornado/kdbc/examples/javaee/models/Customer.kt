@@ -63,7 +63,7 @@ class SelectCustomer : Query<Customer>() {
     }
 
     fun byId(id: Int): Customer = let {
-        WHERE { c.id EQ id }
+        WHERE { c.id `=` id }
         first()
     }
 
@@ -72,7 +72,7 @@ class SelectCustomer : Query<Customer>() {
         list()
     }
 
-    override fun map(rs: ResultSet) = Customer(c)
+    override fun TO(rs: ResultSet) = Customer(c)
 }
 
 class UpdateCustomer(customer: Customer) : Update() {
@@ -80,10 +80,10 @@ class UpdateCustomer(customer: Customer) : Update() {
 
     init {
         UPDATE(c) {
-            c.name TO customer.name
+            c.name `=` customer.name
         }
         WHERE {
-            c.id EQ customer.id
+            c.id `=` customer.id
         }
     }
 }

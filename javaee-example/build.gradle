@@ -7,7 +7,7 @@ description 'KDBC JavaEE Integration Example'
 
 ext.javaee_version = '7.0'
 ext.kdbc_version = '1.0-SNAPSHOT'
-ext.kotlin_version = '1.0.3'
+ext.kotlin_version = '1.0.6'
 
 buildscript {
     repositories {
